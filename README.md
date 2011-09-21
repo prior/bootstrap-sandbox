@@ -42,3 +42,9 @@ And of course you'll need to inlcude a link to the css, you'll probably wanna ad
 For any custom styles you want inside the sandbox, you'll find that you often need to prepend them with #t #b to make them specific enough to catch -- it depends on the style.  It's probably good habit to just do this for everything so you don't waste time figuring it all out.
 
 
+Relevant Changes from Bootstrap
+-------------------------------
+1) rewrite all root level specifications (html & body) to use "#t #b"
+2) prepend all other specifications with "#t #b"
+3) remove the scrollbar in reset.less on #t #b
+
