@@ -3,113 +3,36 @@ TWITTER BOOTSTRAP
 
 Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
 
-To get started -- checkout http://twitter.github.com/bootstrap!
+The main repo is here: http://github.com/twitter/bootstrap
+And the example page is here: http://twitter.github.com/bootstrap
 
+
+This Sandbox Version
+--------------------
+
+Sometimes you're stuck using someone else's css on a page, but you don't have control over your div -- if only you could bring in twitter-bootstrap to style your widget, and not break everything else along with it.  You can with this sandboxed version!
+
+This fork allows you to break free of the css world you're in now, and create a little sandbox on your page where you can use twitter bootstrap without clobbering all the other styles AND without having the other styles clobber your little twitter-bootstrap world.
+
+
+The Big Assumption
+------------------
+
+To sandbox, I've used the trick of overspecifying every style.  I've chosen to prepend every style with two id tokens (#t #b).  This will keep the sandboxed twitter-bootstrap from affecting the outer css world ONLY if that world has specificity less than or equal to the sandboxed styles.  To say it another way, you will be safe if the pre-existing css on the page never uses more than 1 id token in its css declarations.  You're probably still safe if it uses 2 id tokens in a single css declaration, except in rare cases.  If you have any stylings using 3, then this might not work so well.
 
 Usage
 -----
+All of the twitter-bootstrap styles have been sandboxed by prepending them with #t #b, so to take advantage, you'll need to wrap your widget in html like this:
+<div id="t">
+  <div id="b">
+    ha ha rest-of-this-html-page, I can do twitter bootstrap stuff here and you can't
+  </div>
+</div>
 
-You can use Twitter Bootstrap in one of two ways: just drop the compiled CSS into any new project and start cranking, or run LESS on your site and compile on the fly like a boss.
-
-Here's what the LESS version looks like:
-
+And of course you'll need to inlcude a link to the css, you'll probably wanna add it to the end of your css link list, so it retains maximum specificity.
 ``` html
-<link rel="stylesheet/less" type="text/css" href="lib/bootstrap.less">
-<script src="less.js" type="text/javascript"></script>
+<link rel="stylesheet/less" type="text/css" href="bootstrap-sandbox.css" />
 ```
-
-Or if you prefer, the standard css way:
-
-``` html
-<link rel="stylesheet" type="text/css" href="bootstrap.css">
-```
-
-For more info, refer to the docs!
+For any custom styles you want inside the sandbox, you may find that you'll find that you often need to prepend them with #t #b to make them specific enough to catch -- it depends on the style.  It's probably good habit to just do this for everything so you don't waste time figuring it all out.
 
 
-Versioning
-----------
-
-For transparency and insight into our release cycle, and for striving to maintain backwards compatibility, Bootstrap will be maintained under the Semantic Versioning guidelines as much as possible.
-
-Releases will be numbered with the follow format:
-
-`<major>.<minor>.<patch>`
-
-And constructed with the following guidelines:
-
-* Breaking backwards compatibility bumps the major
-* New additions without breaking backwards compatibility bumps the minor
-* Bug fixes and misc changes bump the patch
-
-For more information on SemVer, please visit http://semver.org/.
-
-
-Bug tracker
------------
-
-Have a bug? Please create an issue here on GitHub!
-
-https://github.com/twitter/bootstrap/issues
-
-
-Twitter account
----------------
-
-Keep up to date on announcements and more by following Bootstrap on Twitter, <a href="http://twitter.com/TwBootstrap">@TwBootstrap</a>.
-
-
-Mailing list
-------------
-
-Have a question? Ask on our mailing list!
-
-twitter-bootstrap@googlegroups.com
-
-http://groups.google.com/group/twitter-bootstrap
-
-
-Developers
-----------
-
-We have included a makefile with convenience methods for working with the bootstrap library.
-
-+ **build** - `make build`
-This will run the less compiler on the bootstrap lib and generate a bootstrap.css and bootstrap.min.css file.
-The lessc compiler is required for this command to run.
-
-+ **watch** - `make watch`
-This is a convenience method for watching your less files and automatically building them whenever you save.
-Watchr is required for this command to run.
-
-
-Authors
--------
-
-**Mark Otto**
-
-+ http://twitter.com/mdo
-+ http://github.com/markdotto
-
-**Jacob Thornton**
-
-+ http://twitter.com/fat
-+ http://github.com/fat
-
-
-Copyright and license
----------------------
-
-Copyright 2011 Twitter, Inc.
-
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this work except in compliance with the License.
-You may obtain a copy of the License in the LICENSE file, or at:
-
-   http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
