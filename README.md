@@ -4,6 +4,7 @@ TWITTER BOOTSTRAP - SANDBOXED
 Bootstrap is Twitter's toolkit for kickstarting CSS for websites, apps, and more. It includes base CSS styles for typography, forms, buttons, tables, grids, navigation, alerts, and more.
 
 The main repo is here: http://github.com/twitter/bootstrap
+
 And the example page is here: http://twitter.github.com/bootstrap
 
 
@@ -23,16 +24,21 @@ To sandbox, I've used the trick of overspecifying every style.  I've chosen to p
 Usage
 -----
 All of the twitter-bootstrap styles have been sandboxed by prepending them with #t #b, so to take advantage, you'll need to wrap your widget in html like this:
+
+```html
 <div id="t">
   <div id="b">
     ha ha rest-of-this-html-page, I can do twitter bootstrap stuff here and you can't
   </div>
 </div>
+```
 
 And of course you'll need to inlcude a link to the css, you'll probably wanna add it to the end of your css link list, so it retains maximum specificity.
+
 ``` html
 <link rel="stylesheet/less" type="text/css" href="bootstrap-sandbox.css" />
 ```
-For any custom styles you want inside the sandbox, you may find that you'll find that you often need to prepend them with #t #b to make them specific enough to catch -- it depends on the style.  It's probably good habit to just do this for everything so you don't waste time figuring it all out.
+
+For any custom styles you want inside the sandbox, you'll find that you often need to prepend them with #t #b to make them specific enough to catch -- it depends on the style.  It's probably good habit to just do this for everything so you don't waste time figuring it all out.
 
 
