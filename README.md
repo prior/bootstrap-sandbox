@@ -11,7 +11,7 @@ And the example page is here: http://twitter.github.com/bootstrap
 This Sandbox Version
 --------------------
 
-Sometimes you're stuck using someone else's css on a page, but you don't have control over your div -- if only you could bring in twitter-bootstrap to style your widget, and not break everything else along with it.  You can with this sandboxed version!
+Sometimes you're stuck using someone else's css on a page, but you do have control over your div -- if only you could bring in twitter-bootstrap to style your widget, and not break everything else along with it.  You can with this sandboxed version!
 
 This fork allows you to break free of the css world you're in now, and create a little sandbox on your page where you can use twitter bootstrap without clobbering all the other styles AND without having the other styles clobber your little twitter-bootstrap world.
 
