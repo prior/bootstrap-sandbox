@@ -45,6 +45,8 @@ For any custom styles you want inside the sandbox, you'll find that you often ne
 Relevant Changes from Bootstrap
 -------------------------------
 1) rewrite all root level specifications (html & body) to use "#t #b"
+
 2) prepend all other specifications with "#t #b"
+
 3) remove the scrollbar in reset.less on #t #b
 
